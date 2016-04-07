@@ -1,3 +1,8 @@
+iex ((new-object net.webclient).DownloadString('https://chocolatey.org/install.ps1'))
+choco feature enable --name allowGlobalConfirmation # stop the -y flag being needed for all "choco install"s
+
+choco install -f puppet
+
 remove-item -recurse -force librarian_puppet
 puppet module install puppetlabs-stdlib
 puppet module install chocolatey-chocolatey
