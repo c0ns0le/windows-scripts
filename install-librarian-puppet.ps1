@@ -4,7 +4,7 @@
 #choco install -f git 
 #choco install -f puppet
 
-remove-item -recurse -force librarian_puppet
+Remove-Item -Recurse -Force librarian_puppet
 puppet module install puppetlabs-stdlib
 puppet module install chocolatey-chocolatey
 puppet module install basti1302-windows_path
@@ -13,5 +13,5 @@ cd librarian_puppet
 puppet module build
 puppet module install pkg\*.tar.gz --ignore-dependencies
 cd ..
-remove-item -recurse -force librarian_puppet
+Remove-Item -Recurse -Force librarian_puppet
 puppet apply %SYSTEMDRIVE%\ProgramData\PuppetLabs\puppet\etc\modules\librarian_puppet\tests\init.pp
