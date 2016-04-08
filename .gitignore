@@ -1,3 +1,5 @@
+.librarian
+.librarian/*
 Puppetfile
 librarian_puppet
 librarian_puppet/*
