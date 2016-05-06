@@ -1,6 +1,7 @@
 # This file is called by Windows in the answer file on first run.
-iex ((new-object net.webclient).DownloadString('https://chocolatey.org/install.ps1'))
-choco feature enable --name allowGlobalConfirmation # stop the -y flag being needed for all "choco install"s
+#iex ((new-object net.webclient).DownloadString('https://chocolatey.org/install.ps1'))
+#choco feature enable --name allowGlobalConfirmation # stop the -y flag being needed for all "choco install"s
+iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/st01tkh/windows-scripts/master/install-chocolatey.ps1'))
 
 choco install pswindowsupdate
 Import-Module PSWindowsUpdate
