@@ -1,3 +1,8 @@
+Enable Remote PowerShell
+========================
+
+powershell Enable-PSRemoting -force
+
 Chocolatey install
 ==================
 
