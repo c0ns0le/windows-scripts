@@ -1,8 +1,4 @@
-#iex ((new-object net.webclient).DownloadString('https://chocolatey.org/install.ps1'))
-#choco feature enable --name allowGlobalConfirmation # stop the -y flag being needed for all "choco install"s
-
-#choco install -f cygwin
-#choco install -f cyg-get
+iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/st01tkh/windows-scripts/master/install-librarian-puppet.ps1'))
 
 function Get-ScriptDirectory
 {
