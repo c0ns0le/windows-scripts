@@ -47,21 +47,8 @@ Function Install-PuppetModule($url, $mod) {
 }
 
 puppet module install puppetlabs-stdlib
-Install-PuppetModule "https://github.com/st01tkh/puppet-tkhlib" "tkhlib"
-Install-PuppetModule "https://github.com/voxpupuli/puppet-download_file" "download_file"
-Install-PuppetModule "https://github.com/badgerious/puppet-windows-env" "windows_env"
-Install-PuppetModule "https://github.com/st01tkh/puppet-recursive_directory" "recursive_directory"
-Install-PuppetModule "https://github.com/st01tkh/puppet-ca_certificates" "ca_certificates"
-
-puppet apply %SYSTEMDRIVE%\ProgramData\PuppetLabs\puppet\etc\modules\ca_certificates\tests\init.pp
-Remove-Item -Recurse -Force librarian_puppet
 puppet module install puppetlabs-stdlib
 puppet module install chocolatey-chocolatey
 puppet module install basti1302-windows_path
-git clone https://github.com/st01tkh/puppet-librarian_puppet librarian_puppet
-cd librarian_puppet
-puppet module build
-puppet module install pkg\*.tar.gz --ignore-dependencies
-cd ..
-Remove-Item -Recurse -Force librarian_puppet
+Install-PuppetModule "https://github.com/st01tkh/puppet-librarian_puppet" "librarian_puppet"
 puppet apply %SYSTEMDRIVE%\ProgramData\PuppetLabs\puppet\etc\modules\librarian_puppet\tests\init.pp
