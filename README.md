@@ -1,7 +1,8 @@
 Enable Remote PowerShell
 ========================
 
-powershell Enable-PSRemoting -force
+powershell> Enable-PSRemoting -force
+powershell> Set-ExecutionPolicy RemoteSigned -Force 
 
 Chocolatey install
 ==================
