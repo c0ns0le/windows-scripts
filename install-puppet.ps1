@@ -1,3 +1,4 @@
-iex ((new-object net.webclient).DownloadString('https://chocolatey.org/install.ps1'))
-choco feature enable --name allowGlobalConfirmation # stop the -y flag being needed for all "choco install"s
-choco install -f puppet
+#iex ((new-object net.webclient).DownloadString('https://chocolatey.org/install.ps1'))
+iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/st01tkh/windows-scripts/master/install-chocolatey.ps1'))
+choco install git
+choco install puppet

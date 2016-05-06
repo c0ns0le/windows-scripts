@@ -1,8 +1,8 @@
-iex ((new-object net.webclient).DownloadString('https://chocolatey.org/install.ps1'))
-choco feature enable --name allowGlobalConfirmation # stop the -y flag being needed for all "choco install"s
-choco install -f vim
-choco install -f git 
-choco install -f clink
-choco install -f conemu
-choco install -f notepadplusplus 
-choco install -f clover
+iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/st01tkh/windows-scripts/master/install-chocolatey.ps1'))
+
+choco install vim
+choco install git 
+choco install clink
+choco install conemu
+choco install notepadplusplus 
+choco install clover
