@@ -1,8 +1,4 @@
 iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/st01tkh/windows-scripts/master/install-puppet.ps1'))
-#iex ((new-object net.webclient).DownloadString('https://chocolatey.org/install.ps1'))
-#choco feature enable --name allowGlobalConfirmation # stop the -y flag being needed for all "choco install"s
-#choco install git 
-#choco install puppet
 
 $curSessId = Get-Date -Format "yyyyMMddHHmmss"
 
@@ -45,7 +41,7 @@ Function Install-PuppetModule($url, $mod) {
     Remove-Item -Recurse -Force "$tmpModDir"
 }
 
-puppet module install puppetlabs-stdlib
+Install-PuppetModule "https://github.com/puppetlabs/puppetlabs-stdlib" "stdlib"
 Install-PuppetModule "https://github.com/st01tkh/puppet-tkhlib" "tkhlib"
 Install-PuppetModule "https://github.com/voxpupuli/puppet-download_file" "download_file"
 Install-PuppetModule "https://github.com/badgerious/puppet-windows-env" "windows_env"

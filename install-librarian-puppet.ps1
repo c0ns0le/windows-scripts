@@ -46,9 +46,8 @@ Function Install-PuppetModule($url, $mod) {
     Remove-Item -Recurse -Force "$tmpModDir"
 }
 
-puppet module install puppetlabs-stdlib
-puppet module install puppetlabs-stdlib
-puppet module install chocolatey-chocolatey
-puppet module install basti1302-windows_path
+Install-PuppetModule "https://github.com/puppetlabs/puppetlabs-stdlib" "stdlib"
+Install-PuppetModule "https://github.com/chocolatey/puppet-chocolatey" "chocolatey"
+Install-PuppetModule "https://github.com/basti1302/puppet-windows-path" "windows_path"
 Install-PuppetModule "https://github.com/st01tkh/puppet-librarian_puppet" "librarian_puppet"
 puppet apply %SYSTEMDRIVE%\ProgramData\PuppetLabs\puppet\etc\modules\librarian_puppet\tests\init.pp
