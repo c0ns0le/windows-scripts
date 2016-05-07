@@ -83,3 +83,4 @@ function DownloadAndRun-Puppetfile($url)
 }
 
 DownloadAndRun-Puppetfile("https://raw.githubusercontent.com/st01tkh/windows-scripts/master/Puppetfile.cygwin")
+puppet apply %SYSTEMDRIVE%\ProgramData\PuppetLabs\puppet\etc\modules\cygwin_common\tests\init.pp
