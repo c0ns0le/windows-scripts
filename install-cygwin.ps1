@@ -78,7 +78,7 @@ function DownloadAndRun-Puppetfile($url)
     #Write-Host "plBaseBinDir: $plBaseBinDir"
     Write-Host "lpExec: $lpExec"
     cd "$dir"
-    cmd /c "${lpExec}" install --verbose
+    cmd /c "${lpExec}" install --verbose --clean
     cd "$cwd"
 }
 
