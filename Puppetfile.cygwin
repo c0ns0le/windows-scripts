@@ -4,7 +4,8 @@ mod 'chocolatey-chocolatey'
 
 mod 'puppetlabs-stdlib'
 
-mod 'puppetlabs-powershell'
+mod 'puppetlabs-powershell',
+  :git => 'https://github.com/puppetlabs/puppetlabs-powershell'
 
 mod 'tkh-tkhlib',
   :git => "https://github.com/st01tkh/puppet-tkhlib.git"
