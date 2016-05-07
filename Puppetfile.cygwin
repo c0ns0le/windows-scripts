@@ -2,7 +2,7 @@ forge "https://forgeapi.puppetlabs.com"
 
 mod 'chocolatey-chocolatey'
 
-mod 'puppetlabs-stdlib',
+mod 'puppetlabs-stdlib'
 
 mod 'puppetlabs-powershell'
 
