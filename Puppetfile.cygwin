@@ -32,3 +32,4 @@ mod 'tkh-cygwin_git_encrypt',
   :git => "https://github.com/st01tkh/puppet-cygwin_git_encrypt.git"
 
 #exclusion 'acme-bad_module'
+metadata
