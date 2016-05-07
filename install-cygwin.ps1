@@ -1,4 +1,4 @@
-#iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/st01tkh/windows-scripts/master/install-librarian-puppet.ps1'))
+iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/st01tkh/windows-scripts/master/install-librarian-puppet.ps1'))
 
 function Get-ScriptDirectory
 {
@@ -42,7 +42,9 @@ function Create-PuppetfileTempDir($url)
         $filename = "${filename}.${curSessId}"
     }
     $path = Join-Path -Path "${dir}" -ChildPath "${filename}"
+    Write-Host "Checking if exists $path ..."
     if (!(Test-Path -Path "$path")) {
+        Write-Host "Creating $path ..."
         New-Item -ItemType Directory -Path "$path"
     }
     return $path
