@@ -10,6 +10,9 @@ mod 'puppetlabs-powershell',
   :ref => '1.0.6',
   :git => 'https://github.com/puppetlabs/puppetlabs-powershell.git'
 
+mod 'puppetlabs-vcsrepo',
+  :git => 'https://github.com/puppetlabs/puppetlabs-vcsrepo.git'
+
 mod 'tkh-tkhlib',
   :git => "https://github.com/st01tkh/puppet-tkhlib.git"
 
