@@ -10,7 +10,7 @@ mod 'badgerious-windows_env",
   :git => "https://github.com/badgerious/puppet-windows-env.git"
 
 mod 'tkh-tkhlib',
-  :git => "https://github.com/st01tkh/puppet-tkhlib.git"
+ :git => "https://github.com/st01tkh/puppet-tkhlib.git"
 
 mod 'tkh-cygwin_common',
   :git => "https://github.com/st01tkh/puppet-cygwin_common.git"
