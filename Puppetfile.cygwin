@@ -15,7 +15,7 @@ mod 'tkh-tkhlib',
 
 mod 'puppet-download_file',
   :ref => '1.0.3',
-  :git => "https://github.com/voxpupuli/puppet-download_file"
+  :git => "https://github.com/voxpupuli/puppet-download_file.git"
 
 mod 'badgerious-windows_env',
   :git => "https://github.com/badgerious/puppet-windows-env.git"
@@ -33,4 +33,4 @@ mod 'tkh-cygwin_git_encrypt',
   :git => "https://github.com/st01tkh/puppet-cygwin_git_encrypt.git"
 
 #exclusion 'acme-bad_module'
-metadata
+#metadata
