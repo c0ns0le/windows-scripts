@@ -42,6 +42,7 @@ Function Install-PuppetModule($url, $mod) {
 }
 
 Install-PuppetModule "https://github.com/puppetlabs/puppetlabs-stdlib" "stdlib"
+Install-PuppetModule "https://github.com/puppetlabs/puppetlabs-powershell" "powershell"
 Install-PuppetModule "https://github.com/st01tkh/puppet-tkhlib" "tkhlib"
 Install-PuppetModule "https://github.com/voxpupuli/puppet-download_file" "download_file"
 Install-PuppetModule "https://github.com/badgerious/puppet-windows-env" "windows_env"
