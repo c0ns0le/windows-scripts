@@ -1,4 +1,4 @@
-iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/st01tkh/windows-scripts/master/install-librarian-puppet.ps1'))
+#iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/st01tkh/windows-scripts/master/install-librarian-puppet.ps1'))
 
 function Get-ScriptDirectory
 {
@@ -56,6 +56,7 @@ function Download-ToFileToSessDir($url)
     #$filename = "Puppetfile"
     #$path = Join-Path -Path "${dir}" -ChildPath "${filename}"
     $path = Join-Path -Path "${dir}" -ChildPath "Puppetfile"
+    Write-Host "path: $path"
     $WebClient = New-Object System.Net.WebClient
     $WebClient.DownloadFile($url, $path)
     return $path
@@ -66,6 +67,8 @@ function DownloadAndRun-Puppetfile($url)
     $path = Download-ToFileToSessDir("https://raw.githubusercontent.com/st01tkh/windows-scripts/master/Puppetfile.cygwin")
     $dir = Split-Path "$path" -parent
     $filename = Split-Path "$path" -leaf
+    $modDir = Join-Path -ChildPath "modules" "$dir"
+
     $cwd = $pwd
     $pf = (Get-ChildItem env:ProgramFiles).Value
     $pl = Join-Path -Path "$pf" -ChildPath "Puppet Labs"
@@ -80,6 +83,19 @@ function DownloadAndRun-Puppetfile($url)
     cd "$dir"
     cmd /c "${lpExec}" install --verbose --clean
     cd "$cwd"
+
+    $progDataDir = (Get-ChildItem env:ALLUSERSPROFILE).Value
+    $pupLabsDir = Join-Path -ChildPath "PuppetLabs" "$progDataDir"
+    $pupDir = Join-Path -ChildPath "puppet" "$pupLabsDir"
+    $etcDir = Join-Path -ChildPath "etc" "$pupDir"
+    $dstModDir = Join-Path -ChildPath "modules" "$etcDir"
+    Write-Host "modDir: $modDir progDataDir: $progDataDir pupLabsDir: $pupLabsDir etcDir: $etcDir dstModDir: $dstModDir"
+    if (!(Test-Path -Path "$dstModDir")) {
+        Write-Host "No such directory $dstModDir. Creating ..."
+        New-Item "$dstModDir" -ItemType Directory
+    }
+    Copy-Item "$modDir" "$etcDir" -Force -Recurse
+    Remove-Item -Recurse -Force "$dir"
 }
 
 DownloadAndRun-Puppetfile("https://raw.githubusercontent.com/st01tkh/windows-scripts/master/Puppetfile.cygwin")
