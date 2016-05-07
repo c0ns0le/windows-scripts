@@ -13,6 +13,9 @@ mod 'puppetlabs-powershell',
 mod 'tkh-tkhlib',
   :git => "https://github.com/st01tkh/puppet-tkhlib.git"
 
+mod 'download_file',
+  :git => "https://github.com/voxpupuli/puppet-download_file"
+
 mod 'badgerious-windows_env',
   :git => "https://github.com/badgerious/puppet-windows-env.git"
 
