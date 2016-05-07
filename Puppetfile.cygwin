@@ -3,10 +3,10 @@ forge "https://forgeapi.puppetlabs.com"
 mod 'chocolatey-chocolatey'
 
 mod 'puppetlabs-stdlib', '4.12.0',
-  :git => 'https://github.com/puppetlabs/puppetlabs-stdlib.git',
+  :git => 'https://github.com/puppetlabs/puppetlabs-stdlib.git'
 
 mod 'puppetlabs-powershell', '1.0.6',
-  :git => 'https://github.com/puppetlabs/puppetlabs-powershell.git',
+  :git => 'https://github.com/puppetlabs/puppetlabs-powershell.git'
 
 mod 'tkh-tkhlib',
   :git => "https://github.com/st01tkh/puppet-tkhlib.git"
