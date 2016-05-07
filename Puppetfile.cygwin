@@ -6,7 +6,8 @@ mod 'puppetlabs-stdlib',
   :ref => '4.12.0',
   :git => 'https://github.com/puppetlabs/puppetlabs-stdlib.git'
 
-mod 'puppetlabs-powershell', '1.0.6',
+mod 'puppetlabs-powershell',
+  :ref => '1.0.6',
   :git => 'https://github.com/puppetlabs/puppetlabs-powershell.git'
 
 mod 'tkh-tkhlib',
